@@ -1,132 +1,19 @@
-# MockTest Platform — Phase 1 Setup Guide
+<div align="center"> <img src="https://capsule-render.vercel.app/api?type=waving&color=0:020810,50:040B1E,100:0d1f3c&height=260&section=header&text=ARKASERVE&fontSize=86&fontAlignY=42&fontColor=ffffff&desc=Protected%20Service%20Vessel%20%E2%80%94%20Three%20products.%20One%20unified%20mission.&descAlignY=62&descSize=16&descColor=00C8A4&animation=fadeIn" width="100%" alt="Arkaserve"/> </div> <div align="center"> <a href="https://arkaserve.in"> <img src="https://img.shields.io/badge/🌐_arkaserve.in-00C8A4?style=for-the-badge&logoColor=white" alt="Website"/> </a> &nbsp; <a href="mailto:anil.mikkili@gmail.com"> <img src="https://img.shields.io/badge/Gmail-anil.mikkili%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/> </a> &nbsp; <img src="https://img.shields.io/badge/India-🇮🇳-FF9933?style=for-the-badge&labelColor=138808&color=FF9933" alt="India"/> </div> <br/>
+Building focused digital products that serve real needs — independent, purposeful, and iterative.
 
-## Your project structure
+⚡ Our Products
+<table> <tr> <td align="center" width="33%"> <br/> <img src="https://img.shields.io/badge/MockTest-Platform-00C8A4?style=for-the-badge&logoColor=white" alt="MockTest"/> <br/><br/> <b>MockTest Platform</b> <br/> <sub>Exam preparation for banking, SSC &amp; govt exams</sub> <br/><br/> <sub>🎯 10,000+ questions</sub> <br/> <sub>IBPS &nbsp;·&nbsp; SBI &nbsp;·&nbsp; RRB &nbsp;·&nbsp; SSC &nbsp;·&nbsp; POSTAL</sub> <br/><br/> <a href="https://mocktest.anilsoft.com"> <img src="https://img.shields.io/badge/→_mocktest.anilsoft.com-00C8A4?style=flat-square" alt="MockTest"/> </a> <br/><br/> </td> <td align="center" width="33%"> <br/> <img src="https://img.shields.io/badge/PDF-Tools-F7A84A?style=for-the-badge&logoColor=white" alt="PDF Tools"/> <br/><br/> <b>PDF Tools</b> <br/> <sub>57+ document processing services</sub> <br/><br/> <sub>📄 Merge &nbsp;·&nbsp; Split &nbsp;·&nbsp; Compress</sub> <br/> <sub>OCR &nbsp;·&nbsp; Sign &nbsp;·&nbsp; Watermark &nbsp;·&nbsp; +45 more</sub> <br/><br/> <a href="https://pdftools.anilsofttech.com"> <img src="https://img.shields.io/badge/→_pdftools.anilsofttech.com-F7A84A?style=flat-square" alt="PDF Tools"/> </a> <br/><br/> </td> <td align="center" width="33%"> <br/> <img src="https://img.shields.io/badge/Career-Guide-A78BFA?style=for-the-badge&logoColor=white" alt="Career Guide"/> <br/><br/> <b>Career Guide</b> <br/> <sub>Resources for final-year students</sub> <br/><br/> <sub>🎓 Project Ideas &nbsp;·&nbsp; Resume Prep</sub> <br/> <sub>API Test Guides &nbsp;·&nbsp; Company Insights</sub> <br/><br/> <a href="https://projects.anilsoft.com"> <img src="https://img.shields.io/badge/→_projects.anilsoft.com-A78BFA?style=flat-square" alt="Career Guide"/> </a> <br/><br/> </td> </tr> </table>
+🛠️ Built With
+<div align="center">
+Show Image Show Image Show Image Show Image Show Image Show Image Show Image Show Image
 
-```
-mocktest-platform/
-├── backend/
-│   ├── generator/
-│   │   ├── prompts.py            ← All prompt templates
-│   │   ├── question_generator.py ← Calls Claude API, returns questions
-│   │   ├── validator.py          ← Two-layer AI validation
-│   │   └── template_builder.py   ← Your cost-saving template engine
-│   ├── database/
-│   │   ├── schema.sql            ← Run this in Supabase SQL editor
-│   │   └── db.py                 ← Supabase helper
-│   ├── seed_questions.py         ← Populates full question bank
-│   ├── requirements.txt
-│   └── .env.example
-```
+</div>
+📊 GitHub Stats
+<div align="center"> <img height="170" src="https://github-readme-stats.vercel.app/api?username=arkaserve&show_icons=true&bg_color=040B1E&title_color=00C8A4&icon_color=00C8A4&text_color=c9d1d9&border_color=1a2540&count_private=true" alt="GitHub Stats"/> &nbsp; <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=arkaserve&layout=compact&bg_color=040B1E&title_color=00C8A4&text_color=c9d1d9&border_color=1a2540&langs_count=6" alt="Top Languages"/> </div> <div align="center"> <img src="https://github-readme-streak-stats.herokuapp.com?user=arkaserve&theme=dark&background=040B1E&border=1a2540&ring=00C8A4&fire=F7A84A&currStreakLabel=00C8A4&sideLabels=c9d1d9&dates=8b949e" alt="GitHub Streak"/> </div>
+📬 Get in Touch
+<div align="center">
+Have a question, collaboration idea, or just want to say hello?
 
----
+→ arkaserve.in/#contact  ·  anil.mikkili@gmail.com
 
-## Step 1 — Copy environment file
-
-```bash
-cd mocktest-platform/backend
-cp .env.example .env
-```
-
-Now open `.env` and fill in your keys:
-- `ANTHROPIC_API_KEY` — from console.anthropic.com
-- `OPENAI_API_KEY` — from platform.openai.com (for cross-validation)
-- `SUPABASE_URL` — from your Supabase project Settings > API
-- `SUPABASE_KEY` — the anon/public key from same page
-
-SUPABASE
-projectname: mocktest-platform
-passward: AnilSoft#Cloud2026
----
-
-## Step 2 — Install dependencies
-
-```bash
-cd mocktest-platform/backend
-pip install -r requirements.txt
-```
-
----
-
-## Step 3 — Set up the database
-
-1. Go to your Supabase project
-2. Click **SQL Editor** in the left sidebar
-3. Paste the entire contents of `database/schema.sql`
-4. Click **Run**
-5. You should see 7 tables created
-
----
-
-## Step 4 — Test question generator (quick check)
-
-```bash
-cd mocktest-platform/backend/generator
-python question_generator.py
-```
-
-Expected output: 4 questions printed (2 numerical + 1 reasoning + 1 English)
-
----
-
-## Step 5 — Test validator
-
-```bash
-cd mocktest-platform/backend/generator
-python validator.py
-```
-
-Expected output: 2 questions validated with Layer 1 + Layer 2 results
-
----
-
-## Step 6 — Test template builder + shuffler
-
-```bash
-cd mocktest-platform/backend/generator
-python template_builder.py
-```
-
-Expected output: 1 original SI question + 3 free variations with different numbers
-
----
-
-## Step 7 — Test full pipeline (generate → validate → save)
-
-```bash
-cd mocktest-platform/backend/database
-python db.py
-```
-
-Expected output: 2 questions saved to Supabase, visible in your Table Editor
-
----
-
-## Step 8 — Seed the full question bank
-
-```bash
-cd mocktest-platform/backend
-python seed_questions.py
-```
-
-This takes 20–30 minutes and populates ~200 validated questions.
-After this, mock test generation costs near zero.
-
----
-
-## Troubleshooting
-
-| Error | Fix |
-|-------|-----|
-| `ANTHROPIC_API_KEY not found` | Check your .env file is in backend/ folder |
-| `supabase.exc.APIError` | Check SUPABASE_URL and SUPABASE_KEY |
-| `json.JSONDecodeError` | Claude returned non-JSON — re-run, it's rare |
-| `openai.AuthenticationError` | Add OPENAI_API_KEY or Layer 2 skips gracefully |
-
----
-
-## What we build next (Phase 2)
-
-Once the question bank is seeded:
-- Value shuffler API endpoint
-- Test assembly engine (picks 100 questions, applies shuffling)
-- FastAPI server that serves a complete test on demand
+</div> <div align="center"> <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1f3c,100:020810&height=120&section=footer&fontColor=00C8A4" width="100%"/> </div>
